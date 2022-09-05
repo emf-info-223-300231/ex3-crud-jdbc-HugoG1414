@@ -1043,7 +1043,7 @@ public class DateTimeLib {
    * @param date l'objet Date à transformer en LocalDate
    * @return l'objet LocalDate correspondant à la date de type Date.
    */
-  public static LocalDate dateToLocalDate(Date date) {
+  public LocalDate dateToLocalDate(Date date) {
     if (date != null) {
       return Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
     } else {
@@ -1058,7 +1058,7 @@ public class DateTimeLib {
    * @param localDate l'objet LocalDate à transformer en Date
    * @return l'objet Date correspondant à l'objet LocalDate
    */
-  public static Date localDateToDate(LocalDate localDate) {
+  public Date localDateToDate(LocalDate localDate) {
     if (localDate != null) {
       return Date.from(Instant.from(localDate.atStartOfDay(ZoneId.systemDefault())));
     } else {
